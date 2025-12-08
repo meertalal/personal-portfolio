@@ -1,65 +1,149 @@
-import Image from "next/image";
+"use client";
+import {
+  FaArrowCircleDown,
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa";
+import Header from "@/components/header";
+import Skills from "@/components/skill";
+import Features from "@/components/education";
+import Work from "@/components/work";
+import Experience from "@/components/experience";
+import About from "@/components/about";
+import Footer from "@/components/footer";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import { MdOutlineMail } from "react-icons/md";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <Header />
+      <main className="min-h-screen bg-[#002455] flex items-center justify-center px-4 md:px-6 py-16">
+        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-6 flex flex-col gap-6"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <div>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-5 leading-tight">
+                Hi There,
+                <br /> I'm <span className="text-[#ff7b00]">Meer Talal</span>
+              </h2>
+
+              <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                I am a&nbsp;
+                <TypeAnimation
+                  sequence={[
+                    "Frontend Developer",
+                    2000,
+                    "Backend Developer",
+                    2000,
+                    "Full Stack Developer",
+                    2000,
+                    "Agentic AI Developer",
+                    2000,
+                    "UI/UX Designer",
+                    2000,
+                    "Prompt Engineer",
+                    2000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  deletionSpeed={60}
+                  repeat={Infinity}
+                  className="text-[#ff7b00] text-2xl md:text-3xl inline-block"
+                />
+              </h3>
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-white text-lg md:text-xl max-w-xl"
+            >
+              Highly energetic in UX, interfaces, and web development because
+              imagination matters more than knowledge.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex items-center gap-5 text-white text-3xl mt-4"
+            >
+              <Link
+                href="https://www.linkedin.com/in/meer-talal-7b8a1b1b2/"
+                target="_blank"
+                className="hover:text-[#ff7b00] transition"
+              >
+                <FaLinkedin />
+              </Link>
+
+              <Link
+                href="https://github.com/MuhammadTa1al"
+                target="_blank"
+                className="hover:text-[#ff7b00] transition"
+              >
+                <FaGithub />
+              </Link>
+
+              <Link
+                href="mailto:balochshab248@gmail.com"
+                target="_blank"
+                className="hover:text-[#ff7b00] transition"
+              >
+                <MdOutlineMail />
+              </Link>
+
+              <Link
+                href="https://www.facebook.com/share/1RHmaSYAAs/?mibextid=wwXIfr"
+                target="_blank"
+                className="hover:text-[#ff7b00] transition"
+              >
+                <FaFacebook />
+              </Link>
+
+              <Link
+                href="https://www.instagram.com/shadow329213"
+                target="_blank"
+                className="hover:text-[#ff7b00] transition"
+              >
+                <FaInstagram />
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-6 flex justify-center md:justify-end"
           >
-            Documentation
-          </a>
+            <div className="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-[#ff7b00]">
+              <img
+                src="/image/profile2.png"
+                alt="Meer Talal - full stack developer"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
         </div>
       </main>
-    </div>
+
+      <About />
+      <Skills />
+      <Features />
+      <Work />
+      <Experience />
+      <Footer />
+    </>
   );
 }
