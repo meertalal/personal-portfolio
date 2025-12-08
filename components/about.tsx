@@ -85,7 +85,7 @@ export default function HeroSection() {
               className="flex justify-center md:justify-start"
             >
               <Link
-                href="https://doc-0k-2k-apps-viewer.googleusercontent.com/viewer/secure/pdf/0go8pm90dlh614f49hesqe8vf4tk7esi/3c12h28km0ltqvdi8gjiv4jcebft3bd0/1765111575000/drive/15851075543639839564/ACFrOgA7PPRHOKAfRw-j8-iZ3F9S2iwRzEO1_P2dNfkb0mFDBKnbt110IlKufcg1SgXHDHcuVgVJ7bQjrckitPhaiHC_mfur7EvmCEqld4WRm810QH1YveMMqQW-0I9z8UKmVd0z9X2Bn4LCz2iROKavGgCP92YHxNiUjtW60_lLdNeWJ5bBFX8wvvA4QgK0mpeUwFj64U64pwXxQelmcOQYGFZapCwOXyUTyTXyJg==?print=true&nonce=n350fb25ho0bs&user=15851075543639839564&hash=chtn8usnrvg3ohgq8gj5afkbjfjuljlv"
+                href="https://drive.google.com/file/d/1GH5l1pSA1tQJ0s4myVqD-QVrxsqbw4Yq/view?usp=sharing"
                 download
                 className="flex items-center gap-2 font-semibold bg-[#310ae0f5] text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition"
               >

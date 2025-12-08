@@ -63,7 +63,7 @@ export default function ExperienceSection() {
               <div className="pt-5 px-5 text-2xl font-semibold">Sale Agent</div>
               <div className="px-5 pb-4">
                 <h3 className="text-xl font-semibold">Xpaceglobal</h3>
-                <p className="text-lg font-semibold">22-June-25 - 11-Dec-25</p>
+                <p className="text-lg font-semibold">22-June-25 - Present</p>
               </div>
             </div>
           </motion.div>
@@ -83,7 +83,7 @@ export default function ExperienceSection() {
               <div className="pt-5 px-5 text-2xl font-semibold">Internship</div>
               <div className="px-5 pb-4">
                 <h3 className="text-xl font-semibold">Remote</h3>
-                <p className="text-lg font-semibold">14-Dec-25 - Present</p>
+                <p className="text-lg font-semibold">Coming Soon</p>
               </div>
             </div>
           </motion.div>
