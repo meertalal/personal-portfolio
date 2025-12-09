@@ -25,12 +25,12 @@ export default function Features() {
     {
       title: "Student of Cloud Computing & AI Stack",
       subtitle: "Governor House \n Karachi",
-      date: "2023 | Present",
+      date: "2024 | Present",
       img: "/image/governor-house.jpg",
     },
     {
-      title: "Rose Educational Society",
-      subtitle: "Secondary Education System",
+      title: "Secondary Education System",
+      subtitle: "Rose Educational Society",
       date: "2022 – 2024 | Completed",
       img: "/image/school.jpg",
     },
