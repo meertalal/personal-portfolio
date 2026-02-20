@@ -39,7 +39,7 @@ export default function HeroSection() {
             className="flex justify-center"
           >
             <Image
-              src="/image/profile1.png"
+              src="/image/profile1.jpeg"
               width={350}
               height={350}
               alt="aboutimage"
