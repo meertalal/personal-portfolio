@@ -2,12 +2,13 @@
 import Image from "next/image";
 import Header from "@/components/header";
 import FooterSection from "@/components/footer";
-import { FaCode, FaEye } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { IoCodeSlashSharp } from "react-icons/io5";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaArrowLeft } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { MdComputer } from "react-icons/md";
 
 export default function Page() {
   const projects = [
@@ -107,9 +108,10 @@ The system has a simple, user-friendly interface 😊 so anyone can use it easil
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl text-[#002455] flex font-bold items-center justify-center gap-2 text-center mb-12"
+          className="text-4xl text-[#002455] flex pt-5 font-bold items-center justify-center gap-2 text-center mb-12"
         >
-          <FaCode /> Skills & <span className="text-[#ffae00]">Abilities</span>
+           <MdComputer className="text-3xl sm:text-4xl" />
+                  Projects <span className="text-[#ffae00]">Made</span>
         </motion.h1>
 
         {projects.map((project, idx) => (

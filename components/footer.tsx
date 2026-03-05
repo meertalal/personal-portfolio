@@ -90,7 +90,7 @@ export default function Page() {
 
           <p className="flex items-center gap-2 break-all">
             <MdMarkEmailUnread className="text-[#ffae00]" />
-            balochshab248@gmail.com
+            meertalal85@gmail.com
           </p>
 
           <p className="flex items-center gap-2">
@@ -99,16 +99,16 @@ export default function Page() {
 
           {/* SOCIAL ICONS */}
          <div className="mt-5 flex justify-center md:justify-start gap-6 text-2xl">
-            <Link href="https://www.linkedin.com/in/meer-talal-7834132b5/">
+            <Link href="https://www.linkedin.com/in/muhammadta1al/">
               <FaLinkedin className="hover:text-[#ffae00] transition-colors" />
             </Link>
             <Link href="https://github.com/MuhammadTa1al">
               <FaGithub className="hover:text-[#ffae00] transition-colors" />
             </Link>
-            <Link href="mailto:balochshab248@gmail.com">
+            <Link href="mailto:meertalal85@gmail.com">
               <MdEmail className="hover:text-[#ffae00] transition-colors" />
             </Link>
-            <Link href="https://www.instagram.com/shadow329213">
+            <Link href="https://www.instagram.com/meertalal.b/">
               <FaInstagram className="hover:text-[#ffae00] transition-colors" />
             </Link>
             <Link href="https://www.facebook.com/share/1RHmaSYAAs/?mibextid=wwXIfr">
@@ -128,7 +128,7 @@ export default function Page() {
         <p className="flex flex-wrap items-center justify-center gap-1 text-gray-300 text-sm px-4">
           Designed with <FaHeart className="text-red-700" /> by
           <Link
-            href="https://www.linkedin.com/in/meer-talal-7834132b5/"
+            href="https://www.linkedin.com/in/muhammadta1al/"
             className="hover:text-[#ffae00] transition-colors font-medium"
           >
             &nbsp;Talal Rahim

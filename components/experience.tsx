@@ -1,5 +1,5 @@
 "use client";
-import { FaBriefcase } from "react-icons/fa";
+import { FaArrowRight, FaBriefcase } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -25,7 +25,7 @@ export default function ExperienceSection() {
               </motion.p>
 
       <div className="relative max-w-[1200px] mx-auto px-6">
-        <div className="absolute top-10 bottom-2 left-1/2 -translate-x-1/2 w-1 bg-[#020133] z-0" />
+        <div className="absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-1 bg-[#020133] z-0" />
 
         <div className="flex flex-col gap-16 relative z-10">
           <motion.div
@@ -40,10 +40,10 @@ export default function ExperienceSection() {
             <div className="hidden md:block absolute -ml-6 top-10 left-[30px] border-10 border-transparent border-r-[#f68c09]" />
 
             <div className="bg-[#f68c09] m-6 mt-8 rounded-lg shadow-lg">
-              <div className="pt-5 px-5 text-2xl font-semibold">Teacher</div>
+              <div className="pt-5 px-5 text-2xl font-semibold">Web Developer</div>
               <div className="px-5 pb-4">
-                <h3 className="text-xl font-semibold">Subject Teacher</h3>
-                <p className="text-lg font-semibold">25-Oct-25 - 10-June-25</p>
+                <h3 className="text-xl font-semibold">Fiverr, Upwork, Facebook</h3>
+                <p className="text-lg font-semibold">03/2024 - 11/2024</p>
               </div>
             </div>
           </motion.div>
@@ -60,10 +60,10 @@ export default function ExperienceSection() {
             <div className="hidden md:block absolute -mr-6 top-5 right-[30px] border-10 border-transparent border-l-[#f68c09]" />
 
             <div className="bg-[#f68c09] m-6 mt-2 rounded-lg shadow-lg">
-              <div className="pt-5 px-5 text-2xl font-semibold">Sale Agent</div>
+              <div className="pt-5 px-5 text-2xl font-semibold">Subject Teacher</div>
               <div className="px-5 pb-4">
-                <h3 className="text-xl font-semibold">Xpaceglobal</h3>
-                <p className="text-lg font-semibold">22-June-25 - Present</p>
+                <h3 className="text-xl font-semibold">Foster Public School</h3>
+                <p className="text-lg font-semibold">11/2024 - 06/2025</p>
               </div>
             </div>
           </motion.div>
@@ -80,27 +80,28 @@ export default function ExperienceSection() {
             <div className="hidden md:block -ml-6 absolute top-5 left-[30px] border-10 border-transparent border-r-[#f68c09]" />
 
             <div className="bg-[#f68c09] m-6 mt-2 rounded-lg shadow-lg">
-              <div className="pt-5 px-5 text-2xl font-semibold">Internship</div>
+              <div className="pt-5 px-5 text-2xl font-semibold">Sale Executive</div>
               <div className="px-5 pb-4">
-                <h3 className="text-xl font-semibold">Remote</h3>
-                <p className="text-lg font-semibold">Coming Soon</p>
+                <h3 className="text-xl font-semibold">XpaceGlobal</h3>
+                <p className="text-lg font-semibold">06/2025 - 11/2025</p>
               </div>
             </div>
           </motion.div>
         </div>
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          className="pt-10 flex justify-center"
-        >
-          <Link
-            href="/experience"
-            className="px-10 py-4 rounded-md bg-[#2506ad] shadow-lg text-white font-semibold text-lg transition hover:bg-[#1a047e] flex items-center gap-2"
+      
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            className="pt-20 flex justify-center "
           >
-            View All <i className="fas fa-arrow-right"></i>
-          </Link>
-        </motion.div> */}
+            <Link
+              href="/experience"
+              className="text-[18px] text-black font-bold hover:text-[#ffae00] duration-300 flex items-center gap-1"
+            >
+              View All <FaArrowRight />
+            </Link>
+          </motion.div>
       </div>
     </section>
   );

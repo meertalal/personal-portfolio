@@ -47,46 +47,6 @@ Created to offer users an engaging and effortless sneaker shopping experience �
       codeLink:
         "https://github.com/MuhammadTa1al/-Hackathon-Milestone/tree/main/Milestone%203",
     },
-    {
-      title: "Simple Food Website",
-      emoji: "🍔",
-      description: `A simple and clean food website serving delicious recipes and meal ideas 🍲✨ Features easy navigation, vibrant visuals, and organized categories 📂📸 Perfect for food lovers to explore, cook, and enjoy tasty dishes at home 🍴💛`,
-      image: "/image/simple-web.png",
-      viewLink: "https://simlpe-website.vercel.app/",
-      codeLink: "https://github.com/MuhammadTa1al/Simlpe-Website",
-    },
-    {
-      title: "Second Nike Shoes Website",
-      emoji: "👟",
-      description: `A modern full-stack Nike shoes website delivering sleek UI, fast performance, and seamless shopping 👟⚡
-Built with responsive design, smooth animations, and clean product displays 🎨
-Crafted to offer a premium, user-friendly sneaker shopping experience 🛒✨`,
-      image: "/image/nike-shoes2.png",
-      viewLink: "https://hackathon-figma-3-three.vercel.app/",
-      codeLink: "https://github.com/MuhammadTa1al/-Hackathon-Figma-3",
-    },
-    {
-      title: "Shareable Resume Builder Website",
-      emoji: "🔄",
-      description: `A sleek Shareable Resume Builder website for designing standout resumes ⚡🖋️
-Includes multiple templates, live preview, and easy PDF or link sharing 📑🌐
-Helps users present their professional journey clearly and impressively 👔🌟`,
-      image: "/image/resume-builder2.png",
-      viewLink: "https://hackathon-milestone-5-kappa-eight.vercel.app/",
-      codeLink:
-        "https://github.com/MuhammadTa1al/-Hackathon-Milestone-5/tree/main/Milestone%205",
-    },
-     {
-      title: "Robotic AI Book Website",
-      emoji: "🤖",
-      description: `This project uses AI 🤖 and Python 🐍 to create a smart and efficient solution.
-It analyzes data and automates tasks to deliver fast and accurate results ⚡💻.
-The system has a simple, user-friendly interface 😊 so anyone can use it easily.`,
-      image: "/image/robotic-book.PNG",
-      viewLink: "https://hackathon-robotic-book-eta.vercel.app/",
-      codeLink:
-        "https://github.com/MuhammadTa1al/Hackathon-RoboticBook",
-    },
   ];
 
   // Animation variants
