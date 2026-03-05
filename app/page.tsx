@@ -34,7 +34,7 @@ export default function Home() {
             <div>
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-5 leading-tight">
                 Hi There,
-                <br /> I'm <span className="text-[#ff7b00]">Meer Talal</span>
+                <br /> I'm <span className="text-[#ff7b00]">Muhammad Talal</span>
               </h2>
 
               <h3 className="text-2xl md:text-3xl font-semibold text-white">
@@ -80,7 +80,7 @@ export default function Home() {
               className="flex items-center gap-5 text-white text-3xl mt-4"
             >
               <Link
-                href="https://www.linkedin.com/in/meer-talal-7b8a1b1b2/"
+                href="https://www.linkedin.com/in/muhammadta1al/"
                 target="_blank"
                 className="hover:text-[#ff7b00] transition"
               >
@@ -96,7 +96,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="mailto:balochshab248@gmail.com"
+                href="mailto:meertalal85@gmail.com"
                 target="_blank"
                 className="hover:text-[#ff7b00] transition"
               >
@@ -112,7 +112,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="https://www.instagram.com/shadow329213"
+                href="https://www.instagram.com/meertalal.b/"
                 target="_blank"
                 className="hover:text-[#ff7b00] transition"
               >
