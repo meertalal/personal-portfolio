@@ -76,6 +76,17 @@ Helps users present their professional journey clearly and impressively 👔🌟
       codeLink:
         "https://github.com/MuhammadTa1al/-Hackathon-Milestone-5/tree/main/Milestone%205",
     },
+     {
+      title: "Robotic AI Book Website",
+      emoji: "🤖",
+      description: `This project uses AI 🤖 and Python 🐍 to create a smart and efficient solution.
+It analyzes data and automates tasks to deliver fast and accurate results ⚡💻.
+The system has a simple, user-friendly interface 😊 so anyone can use it easily.`,
+      image: "/image/robotic-book.PNG",
+      viewLink: "https://hackathon-robotic-book-eta.vercel.app/",
+      codeLink:
+        "https://github.com/MuhammadTa1al/Hackathon-RoboticBook",
+    },
   ];
 
   // Animation variants
@@ -89,14 +100,14 @@ Helps users present their professional journey clearly and impressively 👔🌟
   };
 
   return (
-    <div className="bg-[#002455]">
+    <div className="bg-[#EBF4F6]">
       <Header />
       <section className="py-16 md:py-20 px-4 sm:px-6">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl text-white flex font-bold items-center justify-center gap-2 text-center mb-12"
+          className="text-4xl text-[#002455] flex font-bold items-center justify-center gap-2 text-center mb-12"
         >
           <FaCode /> Skills & <span className="text-[#ffae00]">Abilities</span>
         </motion.h1>
@@ -111,7 +122,7 @@ Helps users present their professional journey clearly and impressively 👔🌟
             variants={containerVariants}
             className="mx-auto max-w-5xl space-y-8 md:space-y-16 mb-16"
           >
-            <h2 className="text-2xl sm:text-2xl md:text-3xl font-medium text-white">
+            <h2 className="text-2xl sm:text-2xl md:text-3xl font-medium text-black">
               {project.emoji} {project.title}:
             </h2>
 
@@ -122,7 +133,7 @@ Helps users present their professional journey clearly and impressively 👔🌟
                 transition={{ duration: 0.8 }}
                 className="space-y-4"
               >
-                <p className="text-sm sm:text-base text-white font-semibold">
+                <p className="text-sm sm:text-base text-black font-semibold">
                   {project.description.split(" ").map((word, i) =>
                     word.includes("high performance") ||
                     word.includes("a modern layout") ||
@@ -199,7 +210,7 @@ Helps users present their professional journey clearly and impressively 👔🌟
         >
           <Link
             href="/"
-            className="text-[20px] text-white font-bold hover:text-[#ffae00] duration-300 flex items-center gap-1"
+            className="text-[20px] text-[#002455] font-bold hover:text-[#ffae00] duration-300 flex items-center gap-1"
           >
             <FaArrowLeft /> Back to Home
           </Link>
