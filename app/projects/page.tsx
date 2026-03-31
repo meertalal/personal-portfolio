@@ -191,6 +191,14 @@ export default function WorkSection() {
             <FaArrowLeft /> Back to Home
           </Link>
         </div>
+          <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="mt-10 pt-5 border-t border-white/20"
+              >
+                
+              </motion.div>
       </section>
 
       <Footer />
