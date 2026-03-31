@@ -4,9 +4,9 @@ import Footer from "../../components/footer";
 import Image from "next/image";
 import { MdComputer } from "react-icons/md";
 import { motion } from "framer-motion";
-import { Link } from "lucide-react";
-import { FaArrowLeft, FaHeart } from "react-icons/fa";
-import { FaChevronLeft } from "react-icons/fa6";
+import Link from "next/link"; 
+import { FaArrowLeft } from "react-icons/fa";
+import { useState } from "react";
 
 const projects = [
   {
@@ -88,128 +88,112 @@ The system has a simple, user-friendly interface 😊 so anyone can use it easil
 ];
 
 export default function WorkSection() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
-  <div>
-  <Header/>
-    <section
-    
-      className="bg-gradient-to-b from-[#002455] to-[#002455] py-12 px-4"
-      id="work"
-    >
-      {/* Section Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="p-10 sm:p-14 text-3xl sm:text-4xl text-white flex font-bold items-center justify-center gap-2 text-center"
-      >
-        <MdComputer className="text-3xl sm:text-4xl" />
-        Projects <span className="text-[#ffae00]">Made</span>
-      </motion.h1>
+    <div>
+      <Header />
 
-      {/* Grid */}
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-[1400px] mx-auto">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg group"
-          >
-            {/* Image */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover object-center transition duration-500"
-              />
-            </motion.div>
-
-            {/* Overlay */}
-            <motion.div
-              initial={{ top: "75%" }}
-              whileHover={{ top: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute left-0 w-full h-full bg-white/95 flex flex-col"
-            >
-              {/* Title */}
-              <div className="bg-yellow-400 px-4 py-3">
-                <h3 className="text-lg font-semibold">
-                  {project.emoji} {project.title}
-                </h3>
-              </div>
-
-              {/* Content */}
-              <div className="p-4 flex flex-col justify-between flex-1">
-                <p className="text-sm font-semibold text-gray-800 line-clamp-4">
-                  {project.description}
-                </p>
-
-                {/* Buttons */}
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileHover={{ opacity: 1, y: 0 }}
-                  className="flex gap-2 mt-4 opacity-0 group-hover:opacity-100 transition"
-                >
-                  <a
-                    href={project.viewLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-yellow-400 text-black rounded-md text-sm font-semibold hover:bg-yellow-300 transition"
-                  >
-                    👁 View
-                  </a>
-
-                  <a
-                    href={project.codeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-zinc-600 backdrop-blur text-white rounded-md text-sm hover:bg-black transition"
-                  >
-                    💻 Code
-                  </a>
-                </motion.div>
-              </div>
-            </motion.div>
-          </motion.div>
-        ))}
-      </div>
-
-    
-       <motion.div
-          initial={{ opacity: 0, y: 20 }}
+      <section className="bg-gradient-to-b from-[#002455] to-[#002455] py-10 px-4 sm:px-6">
+        
+     
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="pt-10 flex justify-center"
+          className="py-10 text-2xl sm:text-3xl md:text-4xl text-white flex font-bold items-center justify-center gap-2 text-center"
         >
+          <MdComputer />
+          Projects <span className="text-[#ffae00]">Made</span>
+        </motion.h1>
+
+        
+        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-[1400px] mx-auto">
+          {projects.map((project, index) => {
+            const isActive = activeIndex === index;
+
+            return (
+              <motion.div
+                key={index}
+                onClick={() =>
+                  setActiveIndex(isActive ? null : index)
+                }
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-lg cursor-pointer"
+              >
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+
+                
+                <motion.div
+                  initial={{ top: "70%" }}
+                  animate={{
+                    top: isActive ? 0 : "70%",
+                  }}
+                  whileHover={{ top: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute left-0 w-full h-full bg-white/95 flex flex-col"
+                >
+                  
+                  <div className="bg-yellow-400 px-4 py-2">
+                    <h3 className="text-base sm:text-lg font-semibold">
+                      {project.emoji} {project.title}
+                    </h3>
+                  </div>
+
+                  
+                  <div className="p-3 sm:p-4 flex flex-col justify-between flex-1">
+                    <p className="text-xs sm:text-sm font-medium text-gray-800 line-clamp-4">
+                      {project.description}
+                    </p>
+
+                   
+                    <div className="flex gap-2 mt-3">
+                      <a
+                        href={project.viewLink}
+                        target="_blank"
+                        className="flex-1 text-center px-3 py-2 bg-yellow-400 text-black rounded-md text-xs sm:text-sm font-semibold hover:bg-yellow-300 transition"
+                      >
+                        👁 View
+                      </a>
+
+                      <a
+                        href={project.codeLink}
+                        target="_blank"
+                        className="flex-1 text-center px-3 py-2 bg-zinc-700 text-white rounded-md text-xs sm:text-sm hover:bg-black transition"
+                      >
+                        💻 Code
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        
+        <div className="pt-10 flex justify-center">
           <Link
             href="/"
-            className="text-[20px] text-[#002455] font-bold hover:text-[#ffae00] duration-300 flex items-center gap-1"
+            className="text-base sm:text-lg text-white font-bold hover:text-[#ffae00] duration-300 flex items-center gap-2"
           >
             <FaArrowLeft /> Back to Home
           </Link>
-        </motion.div>
+        </div>
+      </section>
 
-
-       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="mt-10 pt-5 border-t font-bold border-white/20"
-      >
-      
-      </motion.div>
-    </section>
-    <Footer />
+      <Footer />
     </div>
-   
   );
 }
