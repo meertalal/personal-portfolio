@@ -1,18 +1,15 @@
 "use client";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 import Image from "next/image";
-import Header from "@/components/header";
-import FooterSection from "@/components/footer";
-import { FaEye } from "react-icons/fa";
-import { IoCodeSlashSharp } from "react-icons/io5";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { FaArrowLeft } from "react-icons/fa6";
-import { motion } from "framer-motion";
 import { MdComputer } from "react-icons/md";
+import { motion } from "framer-motion";
+import { Link } from "lucide-react";
+import { FaArrowLeft, FaHeart } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa6";
 
-export default function Page() {
-  const projects = [
-    {
+const projects = [
+  {
       title: "Blog Website",
       emoji: "💻",
       description: `A fast, modern blog website built with Next.js and Tailwind CSS ⚡ Optimized for high performance, smooth navigation, and responsiveness 📱 Perfect for sharing articles with a clean and engaging reading experience ✨`,
@@ -88,123 +85,106 @@ The system has a simple, user-friendly interface 😊 so anyone can use it easil
       codeLink:
         "https://github.com/MuhammadTa1al/Hackathon-RoboticBook",
     },
-  ];
+];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.2 },
-    }),
-  };
-
+export default function WorkSection() {
   return (
-    <div className="bg-[#EBF4F6]">
-      <Header />
-      <section className="py-16 md:py-20 px-4 sm:px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl text-[#002455] flex pt-5 font-bold items-center justify-center gap-2 text-center mb-12"
-        >
-           <MdComputer className="text-3xl sm:text-4xl" />
-                  Projects <span className="text-[#ffae00]">Made</span>
-        </motion.h1>
+  <div>
+  <Header/>
+    <section
+    
+      className="bg-gradient-to-b from-[#002455] to-[#002455] py-12 px-4"
+      id="work"
+    >
+      {/* Section Heading */}
+      <motion.h1
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="p-10 sm:p-14 text-3xl sm:text-4xl text-white flex font-bold items-center justify-center gap-2 text-center"
+      >
+        <MdComputer className="text-3xl sm:text-4xl" />
+        Projects <span className="text-[#ffae00]">Made</span>
+      </motion.h1>
 
-        {projects.map((project, idx) => (
+      {/* Grid */}
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-[1400px] mx-auto">
+        {projects.map((project, index) => (
           <motion.div
-            key={idx}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            custom={idx}
-            variants={containerVariants}
-            className="mx-auto max-w-5xl space-y-8 md:space-y-16 mb-16"
+            key={index}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg group"
           >
-            <h2 className="text-2xl sm:text-2xl md:text-3xl font-medium text-black">
-              {project.emoji} {project.title}:
-            </h2>
+            {/* Image */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover object-center transition duration-500"
+              />
+            </motion.div>
 
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-4"
-              >
-                <p className="text-sm sm:text-base text-black font-semibold">
-                  {project.description.split(" ").map((word, i) =>
-                    word.includes("high performance") ||
-                    word.includes("a modern layout") ||
-                    word.includes("a premium") ||
-                    word.includes("A modern Resume") ||
-                    word.includes("delicious recipes") ? (
-                      <span
-                        key={i}
-                        className="text-accent-foreground font-bold"
-                      >
-                        {word}{" "}
-                      </span>
-                    ) : (
-                      word + " "
-                    )
-                  )}
+            {/* Overlay */}
+            <motion.div
+              initial={{ top: "75%" }}
+              whileHover={{ top: 0 }}
+              transition={{ duration: 0.5 }}
+              className="absolute left-0 w-full h-full bg-white/95 flex flex-col"
+            >
+              {/* Title */}
+              <div className="bg-yellow-400 px-4 py-3">
+                <h3 className="text-lg font-semibold">
+                  {project.emoji} {project.title}
+                </h3>
+              </div>
+
+              {/* Content */}
+              <div className="p-4 flex flex-col justify-between flex-1">
+                <p className="text-sm font-semibold text-gray-800 line-clamp-4">
+                  {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-3 pt-6">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="rounded-xl px-5 text-base hover:bg-black hover:text-[#ffae00] duration-300"
+                {/* Buttons */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileHover={{ opacity: 1, y: 0 }}
+                  className="flex gap-2 mt-4 opacity-0 group-hover:opacity-100 transition"
+                >
+                  <a
+                    href={project.viewLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-yellow-400 text-black rounded-md text-sm font-semibold hover:bg-yellow-300 transition"
                   >
-                    <Link
-                      href={project.viewLink}
-                      className="flex items-center gap-2"
-                    >
-                      <FaEye /> View
-                    </Link>
-                  </Button>
+                    👁 View
+                  </a>
 
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="ghost"
-                    className="rounded-xl px-5 text-base hover:text-black"
+                  <a
+                    href={project.codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-zinc-600 backdrop-blur text-white rounded-md text-sm hover:bg-black transition"
                   >
-                    <Link
-                      href={project.codeLink}
-                      className="flex items-center gap-2 text-[#ffae00] duration-300"
-                    >
-                      <IoCodeSlashSharp /> Code
-                    </Link>
-                  </Button>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="relative mt-6 sm:mt-0 flex justify-center md:justify-end"
-              >
-                <div className="bg-linear-to-b aspect-67/34 relative rounded-2xl overflow-hidden p-px dark:from-zinc-700 w-full max-w-[600px]">
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} screenshot`}
-                    width={1206}
-                    height={612}
-                    className="rounded-2xl object-cover w-full h-full"
-                  />
-                </div>
-              </motion.div>
-            </div>
+                    💻 Code
+                  </a>
+                </motion.div>
+              </div>
+            </motion.div>
           </motion.div>
         ))}
+      </div>
 
-        <motion.div
+    
+       <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -217,8 +197,19 @@ The system has a simple, user-friendly interface 😊 so anyone can use it easil
             <FaArrowLeft /> Back to Home
           </Link>
         </motion.div>
-      </section>
-      <FooterSection />
+
+
+       <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="mt-10 pt-5 border-t font-bold border-white/20"
+      >
+      
+      </motion.div>
+    </section>
+    <Footer />
     </div>
+   
   );
 }

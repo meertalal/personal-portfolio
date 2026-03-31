@@ -80,7 +80,7 @@ export default function Home() {
               className="flex items-center gap-5 text-white text-3xl mt-4"
             >
               <Link
-                href="https://www.linkedin.com/in/muhammadta1al/"
+                href="https://www.linkedin.com/in/meertalal/"
                 target="_blank"
                 className="hover:text-[#ff7b00] transition"
               >
@@ -88,7 +88,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="https://github.com/MuhammadTa1al"
+                href="https://github.com/meertalal"
                 target="_blank"
                 className="hover:text-[#ff7b00] transition"
               >

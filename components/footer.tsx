@@ -99,10 +99,10 @@ export default function Page() {
 
           {/* SOCIAL ICONS */}
          <div className="mt-5 flex justify-center md:justify-start gap-6 text-2xl">
-            <Link href="https://www.linkedin.com/in/muhammadta1al/">
+            <Link href="https://www.linkedin.com/in/meertalal/">
               <FaLinkedin className="hover:text-[#ffae00] transition-colors" />
             </Link>
-            <Link href="https://github.com/MuhammadTa1al">
+            <Link href="https://github.com/meertalal">
               <FaGithub className="hover:text-[#ffae00] transition-colors" />
             </Link>
             <Link href="mailto:meertalal85@gmail.com">
@@ -128,7 +128,7 @@ export default function Page() {
         <p className="flex flex-wrap items-center justify-center gap-1 text-gray-300 text-sm px-4">
           Designed with <FaHeart className="text-red-700" /> by
           <Link
-            href="https://www.linkedin.com/in/muhammadta1al/"
+            href="https://www.linkedin.com/in/meertalal/"
             className="hover:text-[#ffae00] transition-colors font-medium"
           >
             &nbsp;Talal Rahim
