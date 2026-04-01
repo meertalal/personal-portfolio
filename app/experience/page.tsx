@@ -1,223 +1,155 @@
 "use client";
+import Header from "../../components/header";
+import FooterSection from "../../components/footer";
 import Image from "next/image";
-import Header from "@/components/header";
-import FooterSection from "@/components/footer";
-import { FaEye } from "react-icons/fa";
-import { IoCodeSlashSharp } from "react-icons/io5";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { FaArrowLeft } from "react-icons/fa6";
+import { MdWork } from "react-icons/md";
 import { motion } from "framer-motion";
-import { MdComputer } from "react-icons/md";
+import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
-export default function Page() {
-  const projects = [
-    {
-      title: "Blog Website",
-      emoji: "💻",
-      description: `A fast, modern blog website built with Next.js and Tailwind CSS ⚡ Optimized for high performance, smooth navigation, and responsiveness 📱 Perfect for sharing articles with a clean and engaging reading experience ✨`,
-      image: "/image/blog-web.png",
-      viewLink:
-        "https://blog-dynamic-jumfwm4k1-muhammad-talals-projects-e672bc8a.vercel.app/",
-      codeLink: "https://github.com/MuhammadTa1al/Blog-Dynamic",
-    },
-    {
-      title: "Portfolio Website",
-      emoji: "🚀",
-      description: `A simple and clean personal portfolio showcasing my projects, skills, and work experience 🧩 Designed with a modern layout for smooth navigation and quick access ⚡ Perfect for highlighting my professional journey with clarity and style ✨`,
-      image: "/image/portfolio.png",
-      viewLink: "https://portfolio-tailwind-css-eight-tan.vercel.app/",
-      codeLink: "https://github.com/MuhammadTa1al/Portfolio-TailwindCss",
-    },
-    {
-      title: "Nike Shoes Website",
-      emoji: "👟",
-      description: `A modern frontend Nike shoes website delivering sleek UI, fast performance, and seamless shopping 👟⚡
-Features responsive design, smooth animations, and eye-catching product displays 🎨✨
-Created to offer users an engaging and effortless sneaker shopping experience 🛒🔥`,
-      image: "/image/nike-shoes1.png",
-      viewLink: "https://sanity-figma-template-3.vercel.app/",
-      codeLink: "https://github.com/MuhammadTa1al/Sanity-figma-Template-3",
-    },
-    {
-      title: "Resume Builder Website",
-      emoji: "💼",
-      description: `A modern Resume Builder website designed to create professional CVs effortlessly 📝✨ Features customizable templates, real-time previews, and export options 📄💻 Perfect for job seekers to showcase skills and experience in a polished format 🚀`,
-      image: "/image/resume-builder.png",
-      viewLink: "https://milestone-3-tau-wine.vercel.app/",
-      codeLink:
-        "https://github.com/MuhammadTa1al/-Hackathon-Milestone/tree/main/Milestone%203",
-    },
-    {
-      title: "Simple Food Website",
-      emoji: "🍔",
-      description: `A simple and clean food website serving delicious recipes and meal ideas 🍲✨ Features easy navigation, vibrant visuals, and organized categories 📂📸 Perfect for food lovers to explore, cook, and enjoy tasty dishes at home 🍴💛`,
-      image: "/image/simple-web.png",
-      viewLink: "https://simlpe-website.vercel.app/",
-      codeLink: "https://github.com/MuhammadTa1al/Simlpe-Website",
-    },
-    {
-      title: "Second Nike Shoes Website",
-      emoji: "👟",
-      description: `A modern full-stack Nike shoes website delivering sleek UI, fast performance, and seamless shopping 👟⚡
-Built with responsive design, smooth animations, and clean product displays 🎨
-Crafted to offer a premium, user-friendly sneaker shopping experience 🛒✨`,
-      image: "/image/nike-shoes2.png",
-      viewLink: "https://hackathon-figma-3-three.vercel.app/",
-      codeLink: "https://github.com/MuhammadTa1al/-Hackathon-Figma-3",
-    },
-    {
-      title: "Shareable Resume Builder Website",
-      emoji: "🔄",
-      description: `A sleek Shareable Resume Builder website for designing standout resumes ⚡🖋️
-Includes multiple templates, live preview, and easy PDF or link sharing 📑🌐
-Helps users present their professional journey clearly and impressively 👔🌟`,
-      image: "/image/resume-builder2.png",
-      viewLink: "https://hackathon-milestone-5-kappa-eight.vercel.app/",
-      codeLink:
-        "https://github.com/MuhammadTa1al/-Hackathon-Milestone-5/tree/main/Milestone%205",
-    },
-     {
-      title: "Robotic AI Book Website",
-      emoji: "🤖",
-      description: `This project uses AI 🤖 and Python 🐍 to create a smart and efficient solution.
-It analyzes data and automates tasks to deliver fast and accurate results ⚡💻.
-The system has a simple, user-friendly interface 😊 so anyone can use it easily.`,
-      image: "/image/robotic-book.PNG",
-      viewLink: "https://hackathon-robotic-book-eta.vercel.app/",
-      codeLink:
-        "https://github.com/MuhammadTa1al/Hackathon-RoboticBook",
-    },
-  ];
+const experiences = [
+  {
+    company: "Fiverr",
+    role: "Full Stack Developer",
+    duration: "03/2024 - 11/2024",
+    tech: ["Next.js", "React", "Tailwind CSS", "Node.js", "TypeScript"],
+    responsibilities: [
+      "Developed modern and responsive web applications using Next.js",
+      "Built multiple portfolio and business websites for practice and clients",
+      "Focused on performance optimization and clean UI/UX design",
+      "Implemented reusable components and scalable project structure",
+    ],
+    image: "/image/Fiverr.png",
+  },
+  {
+    company: "Foster Public School",
+    role: "Subject Teacher",
+    duration: "11/2024 - 06/2025",
+    tech: ["Math", "English", "Physics", "Computer Science"],
+    responsibilities: [
+      "Taught core math concepts including algebra, geometry, and basic calculus",
+      "Explained fundamental physics concepts like motion, force, and energy",
+      "Improved students’ reading, writing, and speaking skills",
+      "Taught basic to intermediate computer skills and programming",
+    ],
+    image: "/image/Foster-School.jpeg",
+  },
+   {
+  company: "Xpace Global",
+  role: "Sales Agent",
+  duration: "11/2024 - 06/2025",
+  tech: ["Chat Support", "Sales Targets", "Customer Handling", "CRM"],
+  responsibilities: [
+    "Handled customer queries through chat support and provided effective solutions",
+    "Achieved and exceeded monthly sales targets through strong communication skills",
+    "Assisted customers in product selection and guided them through the buying process",
+    "Maintained customer satisfaction and built long-term client relationships",
+  ],
+  image: "/image/Xpace-Global.jpeg",
+},
+  {
+  company: "Kh-Solutionz",
+  role: "Sales Agent",
+  duration: "11/2024 - 06/2025",
+  tech: ["CRM", "Customer Support", "Lead Generation", "Sales Targets"],
+  responsibilities: [
+    "Reached out to potential clients and promoted company products",
+    "Achieved monthly sales targets consistently",
+    "Managed customer inquiries and provided solutions",
+    "Maintained accurate records of sales and customer interactions",
+  ],
+  image: "/image/Kh-Solutionz.jpeg",
+},
+];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.2 },
-    }),
-  };
-
+export default function ExperienceSection() {
   return (
     <div className="bg-[#EBF4F6]">
       <Header />
+
       <section className="py-16 md:py-20 px-4 sm:px-6">
+
+        {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl text-[#002455] flex pt-5 font-bold items-center justify-center gap-2 text-center mb-12"
+          className="text-3xl sm:text-4xl text-[#002455] flex pt-5 font-bold items-center justify-center gap-2 text-center mb-12"
         >
-           <MdComputer className="text-3xl sm:text-4xl" />
-                  Projects <span className="text-[#ffae00]">Made</span>
+          <MdWork />
+          My <span className="text-[#ffae00]">Experience</span>
         </motion.h1>
 
-        {projects.map((project, idx) => (
+        {/* Experience List */}
+        {experiences.map((exp, idx) => (
           <motion.div
             key={idx}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            custom={idx}
-            variants={containerVariants}
-            className="mx-auto max-w-5xl space-y-8 md:space-y-16 mb-16"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mx-auto max-w-5xl mb-16"
           >
-            <h2 className="text-2xl sm:text-2xl md:text-3xl font-medium text-black">
-              {project.emoji} {project.title}:
-            </h2>
+            {/* Top Info */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#002455]">
+                {exp.role}
+              </h2>
 
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 md:gap-12 lg:gap-24 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-4"
-              >
-                <p className="text-sm sm:text-base text-black font-semibold">
-                  {project.description.split(" ").map((word, i) =>
-                    word.includes("high performance") ||
-                    word.includes("a modern layout") ||
-                    word.includes("a premium") ||
-                    word.includes("A modern Resume") ||
-                    word.includes("delicious recipes") ? (
-                      <span
-                        key={i}
-                        className="text-accent-foreground font-bold"
-                      >
-                        {word}{" "}
-                      </span>
-                    ) : (
-                      word + " "
-                    )
-                  )}
-                </p>
+              <span className="text-sm text-gray-600 font-medium mt-2 sm:mt-0">
+                {exp.company} • {exp.duration}
+              </span>
+            </div>
 
-                <div className="flex flex-wrap gap-3 pt-6">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="rounded-xl px-5 text-base hover:bg-black hover:text-[#ffae00] duration-300"
-                  >
-                    <Link
-                      href={project.viewLink}
-                      className="flex items-center gap-2"
-                    >
-                      <FaEye /> View
-                    </Link>
-                  </Button>
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {exp.tech.map((tech, i) => (
+                <span
+                  key={i}
+                  className="text-xs px-3 py-1 bg-[#002455]/10 text-[#002455] rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
 
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="ghost"
-                    className="rounded-xl px-5 text-base hover:text-black"
-                  >
-                    <Link
-                      href={project.codeLink}
-                      className="flex items-center gap-2 text-[#ffae00] duration-300"
-                    >
-                      <IoCodeSlashSharp /> Code
-                    </Link>
-                  </Button>
-                </div>
-              </motion.div>
+            {/* Content */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
 
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="relative mt-6 sm:mt-0 flex justify-center md:justify-end"
-              >
-                <div className="bg-linear-to-b aspect-67/34 relative rounded-2xl overflow-hidden p-px dark:from-zinc-700 w-full max-w-[600px]">
+              {/* LEFT */}
+              <div className="space-y-4">
+                <ul className="list-disc pl-5 text-sm sm:text-base text-gray-800 space-y-2">
+                  {exp.responsibilities.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* RIGHT IMAGE */}
+              <div className="flex justify-center md:justify-end">
+                <div className="relative w-[220px] sm:w-[260px] md:w-[300px] h-[140px] sm:h-[170px] md:h-[200px] rounded-3xl overflow-hidden shadow-md">
                   <Image
-                    src={project.image}
-                    alt={`${project.title} screenshot`}
-                    width={1206}
-                    height={612}
-                    className="rounded-2xl object-cover w-full h-full"
+                    src={exp.image}
+                    alt={exp.role}
+                    fill
+                    className="object-cover"
                   />
                 </div>
-              </motion.div>
+              </div>
+
             </div>
           </motion.div>
         ))}
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="pt-10 flex justify-center"
-        >
+        {/* Back Button */}
+        <div className="pt-10 flex justify-center">
           <Link
             href="/"
-            className="text-[20px] text-[#002455] font-bold hover:text-[#ffae00] duration-300 flex items-center gap-1"
+            className="text-lg text-[#002455] font-bold hover:text-[#ffae00] duration-300 flex items-center gap-2"
           >
             <FaArrowLeft /> Back to Home
           </Link>
-        </motion.div>
+        </div>
       </section>
+
       <FooterSection />
     </div>
   );
